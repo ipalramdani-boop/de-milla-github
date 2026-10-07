@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Happy Birthday, De Milla ❤️ | A Little Love Story</title>
+<style>
+:root{
+  --bg:#080611;--panel:rgba(255,255,255,.07);--line:rgba(255,255,255,.13);
+  --text:#fff8fc;--muted:#cfc5d2;--pink:#ff6fae;--pink2:#ffb6d5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% 0,#35142d 0,#100a18 38%,#05040a 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+button,input{font:inherit}
+button{cursor:pointer}
+#stars,#hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;opacity:.5;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.12;transform:scale(.4)}}
+.heart{position:absolute;color:#ff8fbd;animation:float 5s linear forwards}
+@keyframes float{from{transform:translateY(110vh) rotate(0);opacity:0}15%{opacity:.8}to{transform:translateY(-15vh) rotate(30deg);opacity:0}}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(5,4,10,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1100px;margin:auto;padding:12px 18px;display:flex;gap:8px;align-items:center;justify-content:space-between}
+.brand{font-weight:800;letter-spacing:.4px}.brand span{color:var(--pink)}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.navlinks button,.musicBtn{background:transparent;color:#eee;border:1px solid transparent;border-radius:999px;padding:8px 12px}
+.navlinks button:hover,.musicBtn:hover{border-color:var(--line);background:var(--panel)}
+main{position:relative;z-index:1}
+section{min-height:100vh;padding:110px 20px 70px;display:flex;align-items:center;justify-content:center}
+.wrap{width:min(1050px,100%);margin:auto}
+.hero{text-align:center;min-height:100vh;position:relative}
+.badge{display:inline-block;padding:8px 14px;border:1px solid rgba(255,182,213,.3);border-radius:999px;color:var(--pink2);background:rgba(255,111,174,.08);letter-spacing:2px;text-transform:uppercase;font-size:12px}
+h1{font-size:clamp(48px,10vw,100px);line-height:.95;margin:22px 0 14px;background:linear-gradient(135deg,#fff,#ffb6d5 55%,#ff6fae);-webkit-background-clip:text;color:transparent}
+h2{font-size:clamp(32px,6vw,58px);margin:0 0 15px}
+h3{margin:8px 0;font-size:22px}
+p{color:var(--muted);line-height:1.8}
+.hero p{max-width:650px;margin:0 auto 30px}
+.btn{border:0;border-radius:999px;padding:13px 20px;background:linear-gradient(135deg,#ff8fbd,#ff4f9b);color:#170711;font-weight:800;box-shadow:0 10px 35px rgba(255,79,155,.25)}
+.btn.secondary{background:var(--panel);color:white;border:1px solid var(--line);box-shadow:none}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.card{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.3);backdrop-filter:blur(10px)}
+.birthday{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.cake{font-size:130px;text-align:center;filter:drop-shadow(0 15px 30px rgba(255,111,174,.25));animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.letter{font-size:17px}
+.quote{border-left:3px solid var(--pink);padding-left:18px;font-style:italic;color:#f3dce7}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:25px}
+.step{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.045)}
+.step b{color:var(--pink2)}
+.mediaGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.upload{border:1px dashed rgba(255,182,213,.4);border-radius:20px;padding:22px;text-align:center;background:rgba(255,111,174,.05)}
+input[type=file]{width:100%;max-width:100%;color:#ddd;margin:12px 0}
+video,audio{width:100%;border-radius:16px;background:#000}
+.photoBox{width:min(340px,100%);aspect-ratio:1/1;margin:auto;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.04);display:grid;place-items:center;color:#9e94a0}
+.photoBox img{width:100%;height:100%;object-fit:cover}
+.messages{position:relative;margin-top:30px}
+.messageItem{display:grid;grid-template-columns:120px 1fr;gap:18px;position:relative;padding-bottom:26px}
+.messageItem:before{content:"";position:absolute;left:54px;top:0;bottom:0;width:1px;background:rgba(255,182,213,.22)}
+.date{z-index:1;width:110px;height:110px;border-radius:50%;display:grid;place-items:center;background:#160d1b;border:1px solid rgba(255,182,213,.35);color:var(--pink2);font-size:12px;text-align:center}
+.messageCard{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:20px;padding:20px}
+.messageCard p{margin:5px 0}
+.memoryList{display:grid;gap:18px;margin-top:18px}
+.empty{padding:35px;text-align:center;border:1px dashed var(--line);border-radius:20px;color:#aaa}
+.wishes{text-align:center}
+.wishCloud{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:25px 0}
+.wishCloud span{padding:10px 15px;border-radius:999px;background:rgba(255,111,174,.09);border:1px solid rgba(255,182,213,.2);color:#ffd8e7}
+.final{text-align:center}
+.bigHeart{font-size:100px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.1);filter:drop-shadow(0 0 25px #ff6fae)}}
+.reveal{opacity:0;transform:translateY(25px);transition:1s ease}
+.reveal.show{opacity:1;transform:none}
+footer{text-align:center;padding:35px;color:#837887;font-size:13px}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.75);display:none;place-items:center;padding:20px}
+.modal.open{display:grid}
+.modalBox{width:min(620px,100%);text-align:center}
+.confetti{position:fixed;z-index:100;width:8px;height:14px;animation:fall 2.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:760px){
+ .birthday,.mediaGrid{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}
+ .navlinks{display:none}.messageItem{grid-template-columns:75px 1fr}.date{width:70px;height:70px}.messageItem:before{left:35px}
+ section{padding-top:95px}
+}
+
+/* De Milla's personal memory + sticker decorations */
+.stickerHero{height:0;position:relative;z-index:-1}
+.stickerHero .floatingSticker{width:130px;max-width:22%;position:absolute}
+.stickerHero .floatingSticker:nth-child(1){left:3%;top:-125px;transform:rotate(-9deg)}
+.stickerHero .floatingSticker:nth-child(2){right:3%;top:-105px;transform:rotate(8deg)}
+
+.childhoodWrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:24px;align-items:center}
+.childhoodPhoto{width:100%;max-width:520px;aspect-ratio:1.2/1;object-fit:cover;border-radius:28px;border:1px solid rgba(255,182,213,.3);box-shadow:0 25px 80px rgba(0,0,0,.45);display:block;margin:auto}
+.childhoodCaption{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#ffb6d5}
+.stickerStage{position:relative;height:260px;margin:10px 0 0;overflow:hidden;border-radius:24px;background:radial-gradient(circle at center,rgba(255,111,174,.10),transparent 65%);border:1px solid rgba(255,255,255,.08)}
+.floatingSticker{position:absolute;width:145px;max-width:30%;filter:drop-shadow(0 16px 18px rgba(0,0,0,.35));animation:stickerFloat 4.5s ease-in-out infinite}
+.fs1{left:2%;top:10%;transform:rotate(-7deg);animation-delay:.1s}
+.fs2{left:35%;top:0%;transform:rotate(5deg);animation-delay:.8s}
+.fs3{right:2%;top:10%;transform:rotate(7deg);animation-delay:1.4s}
+.fs4{left:17%;bottom:-5%;transform:rotate(5deg);animation-delay:1.9s}
+.fs5{left:48%;bottom:-7%;transform:rotate(-6deg);animation-delay:2.5s}
+.fs6{right:14%;bottom:-5%;transform:rotate(7deg);animation-delay:3s}
+.fs7{left:2%;bottom:-2%;transform:rotate(-5deg);animation-delay:1.2s}
+.fs8{right:2%;top:0%;transform:rotate(5deg);animation-delay:2.1s}
+.fs9{left:39%;bottom:-18%;transform:rotate(2deg);animation-delay:3.4s}
+@keyframes stickerFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -8px}
+}
+.stickerGallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.stickerTile{min-height:130px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.035);display:grid;place-items:center;overflow:hidden}
+.stickerTile img{width:88%;height:120px;object-fit:contain;filter:drop-shadow(0 10px 10px rgba(0,0,0,.25))}
+@media(max-width:760px){
+ .childhoodWrap{grid-template-columns:1fr}
+ .stickerStage{height:220px}
+ .floatingSticker{width:115px}
+ .stickerGallery{grid-template-columns:repeat(2,1fr)}
+}
+
+
+/* Romantic De Milla edition */
+.romanticOverlay{position:fixed;inset:0;z-index:200;background:radial-gradient(circle at 50% 40%,rgba(255,126,184,.18),rgba(8,6,17,.98) 68%);display:grid;place-items:center;padding:24px;transition:opacity .9s,visibility .9s}
+.romanticOverlay.hide{opacity:0;visibility:hidden;pointer-events:none}
+.romanticBox{width:min(720px,100%);text-align:center;padding:42px 26px;border:1px solid rgba(255,182,213,.25);border-radius:34px;background:rgba(20,9,25,.72);backdrop-filter:blur(18px);box-shadow:0 30px 120px rgba(0,0,0,.55)}
+.romanticBox .miniHeart{font-size:52px;animation:pulse 1.8s infinite}
+.romanticBox h2{font-size:clamp(34px,7vw,68px);margin:12px 0;background:linear-gradient(135deg,#fff,#ffd2e4,#ff6fae);-webkit-background-clip:text;color:transparent}
+.romanticBox p{max-width:560px;margin:0 auto 24px}
+.loveLine{font-size:15px;letter-spacing:1.5px;color:#ffc7dd;text-transform:uppercase}
+.heroNote{font-size:16px!important;color:#f4d8e6!important}
+.letterCard{position:relative;overflow:hidden}
+.letterCard:after{content:'♥';position:absolute;right:22px;bottom:-28px;font-size:150px;color:rgba(255,111,174,.055);transform:rotate(-15deg)}
+.typeLine{min-height:2em;color:#ffd7e6;font-size:18px;margin:0 auto 25px!important}
+.loveMeter{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin:22px 0}.loveMeter span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#ff6fae,#ffd0e2);animation:loveFill 2.2s ease}.loveMeterLabel{text-align:center;font-size:12px;color:#bcaab6;letter-spacing:2px;text-transform:uppercase}
+.romanticQuote{font-size:22px;line-height:1.7;color:#ffe6f0;text-align:center;margin:15px auto;max-width:760px}
+.loveSteps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.loveStep{padding:20px;border-radius:22px;border:1px solid rgba(255,182,213,.16);background:rgba(255,111,174,.045)}.loveStep .icon{font-size:30px}.loveStep b{display:block;color:#ffd0e1;margin:8px 0}
+@keyframes loveFill{from{width:0}to{width:100%}}
+@media(max-width:760px){.loveSteps{grid-template-columns:1fr}.romanticBox{padding:34px 18px}}
+
+
+.clip-card{position:relative;overflow:visible}
+.clip-stickers{position:absolute;inset:0;pointer-events:none;z-index:3}
+.clip-stickers img{position:absolute;width:76px;height:76px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.35));animation:stickerFloat 4.8s ease-in-out infinite}
+.clip-stickers.top-left img:first-child{left:-10px;top:-18px;transform:rotate(-9deg)}
+.clip-stickers.top-right img:first-child{right:-10px;top:-18px;transform:rotate(9deg)}
+.clip-stickers.bottom-left img:first-child{left:-10px;bottom:52px;transform:rotate(7deg)}
+.clip-stickers.bottom-right img:first-child{right:-10px;bottom:52px;transform:rotate(-7deg)}
+.clip-stickers img:nth-child(2){width:66px;height:66px;animation-delay:-2.1s}
+.clip-stickers.top-left img:nth-child(2){right:8px;top:-12px;transform:rotate(7deg)}
+.clip-stickers.top-right img:nth-child(2){left:8px;top:-12px;transform:rotate(-7deg)}
+.clip-stickers.bottom-left img:nth-child(2){right:8px;bottom:48px;transform:rotate(-6deg)}
+.clip-stickers.bottom-right img:nth-child(2){left:8px;bottom:48px;transform:rotate(6deg)}
+.clip-sticker-caption{text-align:center;color:#d9c5d0;font-size:12px;letter-spacing:.3px;margin:10px 0 2px}
+@media(max-width:600px){.clip-stickers img{width:58px;height:58px}.clip-stickers img:nth-child(2){width:50px;height:50px}.clip-stickers.top-left img:first-child{left:-4px}.clip-stickers.top-right img:first-child{right:-4px}.clip-stickers.bottom-left img:first-child{left:-4px;bottom:46px}.clip-stickers.bottom-right img:first-child{right:-4px;bottom:46px}}
+.compact-stickers{height:150px;display:flex;align-items:center;justify-content:space-around;overflow:hidden}.compact-stickers .floatingSticker{position:relative!important;left:auto!important;right:auto!important;top:auto!important;width:120px;max-width:38%;transform:none!important;animation:stickerFloat 4.5s ease-in-out infinite}.compact-stickers .fs2{animation-delay:-2.2s!important}@media(max-width:600px){.compact-stickers{height:125px}.compact-stickers .floatingSticker{width:92px}}
+</style>
+</head>
+<body>
+<div id="stars"></div><div id="hearts"></div>
+<div class="romanticOverlay" id="romanticOverlay">
+<div class="romanticBox">
+<div class="miniHeart">♡</div>
+<div class="loveLine">I made something small and special for you</div>
+<h2>Hi, De Milla. 🌷</h2>
+<p>I made this little page so, for a few minutes, the world can slow down and you can enjoy the memories I wanted to give you.</p>
+<button class="btn" onclick="enterRomance()">Will you open it for me? ❤️</button>
+</div>
+</div>
+<header>
+<div class="nav">
+<div class="brand">For <span>De Milla</span> ❤️</div>
+<div class="navlinks">
+<button onclick="go('birthday')">Birthday</button>
+<button onclick="go('story')">Our Story</button>
+<button onclick="go('childhood')">Childhood</button>
+<button onclick="go('messages')">Messages</button>
+<button onclick="go('voice')">Voice</button>
+<button onclick="go('memories')">Memories</button>
+<button onclick="go('wishes')">Wishes</button>
+</div>
+<button class="musicBtn" id="musicBtn" onclick="toggleMusic()">🎵 Music</button>
+</div>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="wrap reveal">
+<span class="badge">For the girl who makes my days softer ❤️</span>
+<h1>Happy Birthday,<br/>De Milla</h1>
+<p class="heroNote">If one page could hold all my love for you, it would never be enough. So tonight, I only want to give you one little place filled with you. ❤️</p>
+<p class="typeLine" id="typeLine"></p>
+<div aria-hidden="true" class="stickerHero">
+<img alt="" class="floatingSticker" src="media/sticker-01.png"/>
+<img alt="" class="floatingSticker" src="media/sticker-02.png"/>
+</div>
+<div class="actions">
+<button class="btn" onclick="openSurprise()">Open this little gift, my love 💗</button>
+<button class="btn secondary" onclick="toggleMusic()">🎵 Play our birthday music</button>
+</div>
+<p style="font-size:12px;margin-top:18px">The Happy Birthday song is already included in this website and will be ready when you open it.</p>
+</div>
+</section>
+<section id="birthday">
+<div class="wrap birthday reveal">
+<div class="card letterCard">
+<span class="badge">A Letter For You</span>
+<h2>For De Milla,<br/>from Aa Ipal. 💌</h2>
+<p class="letter">Today is not only about another year of your life. To me, it is a reminder that the world once gave me someone so precious: you.</p>
+<p class="letter">Thank you for every conversation, laugh, little act of care, your voice, and every small moment that may look ordinary but quietly became some of the moments I treasure most.</p>
+<p class="quote">“If you ever forget how precious you are, come back to this page. Let me be the one to remind you.” ❤️</p>
+<div class="loveMeter"><span></span></div>
+<div class="loveMeterLabel">Love: no finish button</div>
+<div class="actions" style="margin-top:22px"><button class="btn" onclick="go('story')">Lanjut baca cerita kita →</button></div>
+</div>
+<div class="card" style="text-align:center">
+<div class="cake">🎂</div>
+<h3>Make a wish, birthday girl.</h3>
+<p>Close your eyes for a moment. Make one wish. Then press the button. ✨</p>
+<button class="btn" onclick="birthdayBurst()">I already have a wish for you 💕</button>
+</div>
+</div>
+</section>
+<section id="story">
+<div class="wrap reveal">
+<div class="card">
+<span class="badge">Our Story</span>
+<h2>From one conversation...</h2>
+<p class="romanticQuote">“I may not be able to promise that every day will be perfect. But as long as I am given the chance, I want there to always be a reason to make you smile.”</p>
+<div class="loveSteps">
+<div class="loveStep"><div class="icon">🌷</div><b>At first</b><span>It started with a simple conversation that became something deeply meaningful.</span></div>
+<div class="loveStep"><div class="icon">💞</div><b>Then</b><span>My days started carrying new stories because you were in them.</span></div>
+<div class="loveStep"><div class="icon">🌙</div><b>Now</b><span>I want many more beautiful memories for us to look back on one day.</span></div>
+</div>
+<p>It started with a simple conversation through Instagram. Then came random stories, funny moments, strange conversations, school stories, difficult days, and countless little things.</p>
+<p>Some moments seemed ordinary at the time. But together, they became a collection of memories.</p>
+<div class="timeline">
+<div class="step"><b>01</b><br/>First Conversation</div>
+<div class="step"><b>02</b><br/>Getting to Know You</div>
+<div class="step"><b>03</b><br/>So Many Stories</div>
+<div class="step"><b>04</b><br/>Today — Your Birthday</div>
+</div>
+</div>
+</div>
+</section>
+<section id="childhood">
+<div class="wrap reveal">
+<div class="card childhoodWrap">
+<div>
+<span class="badge">A Little Piece Of The Past</span>
+<h2>Before all these memories...</h2>
+<p class="letter">A small glimpse from De Milla's childhood, kept here as one of the sweetest parts of this birthday surprise.</p>
+<p class="childhoodCaption">One photo. One memory. One beautiful chapter of your story.</p>
+</div>
+<div>
+<img alt="De Milla's childhood photo" class="childhoodPhoto" src="media/childhood.png"/>
+</div>
+</div>
+<div class="card" style="margin-top:24px">
+<span class="badge">Little Pieces Of Us</span>
+<h3>Two little stickers, just for us. 💕</h3>
+<p>A small reminder of the two people who make these memories special.</p>
+<div class="stickerStage compact-stickers">
+<img alt="Our couple sticker" class="floatingSticker fs1" src="media/sticker-01.png"/>
+<img alt="Our couple sticker" class="floatingSticker fs2" src="media/sticker-02.png"/>
+</div>
+</div>
+
+<section id="messages">
+<div class="wrap reveal">
+<span class="badge">Our Little Archive</span>
+<h2>Conversations that turned into memories. 💬❤️</h2>
+<p>Our chat videos are already built into this page. De Milla does not need to choose any files manually.</p>
+<div class="memoryList">
+<div class="card clip-card"><h3>📱 Chat History — Part 1</h3><video controls="" playsinline="" preload="metadata" src="media/chat-01.mp4"></video><div class="clip-stickers top-left"><img alt="Our couple sticker" loading="lazy" src="media/sticker-01.png"/><img alt="Our couple sticker" loading="lazy" src="media/sticker-02.png"/></div><div class="clip-sticker-caption">A little piece of us in every clip ❤️</div></div>
+<div class="card clip-card"><h3>📱 Chat History — Part 2</h3><video controls="" playsinline="" preload="metadata" src="media/chat-02.mp4"></video><div class="clip-stickers bottom-right"><img alt="Our couple sticker" loading="lazy" src="media/sticker-02.png"/></div><div class="clip-sticker-caption">Just a tiny reminder of us. ❤️</div></div>
+<div class="card clip-card"><h3>📱 Chat History — Part 3</h3><video controls="" playsinline="" preload="metadata" src="media/chat-03.mp4"></video><div class="clip-stickers top-right"><img alt="Our couple sticker" loading="lazy" src="media/sticker-01.png"/><img alt="Our couple sticker" loading="lazy" src="media/sticker-02.png"/></div><div class="clip-sticker-caption">Another little memory, just for you. 💕</div></div>
+</div>
+</div>
+</section>
+<section id="voice">
+<div class="wrap reveal">
+<div class="card">
+<span class="badge">A Voice I Want To Keep</span>
+<h2>Because your voice has its own little place in my heart. 🎧</h2>
+<p>The audio is taken from the first video you sent, so your voice can be heard without playing the whole video.</p>
+<audio controls="" preload="metadata" src="media/de-milla-voice.m4a"></audio>
+</div>
+</div>
+</section>
+<section id="memories">
+<div class="wrap reveal">
+<span class="badge">Our Little Cinema</span>
+<h2>Play our little moments again. 🎬</h2>
+<p>All the main media is already included with the website.</p>
+<div class="mediaGrid">
+<div class="upload card">
+<strong>🎂 Happy Birthday Music</strong>
+<audio controls="" preload="metadata" src="media/happy-birthday.mp3"></audio>
+<p style="font-size:12px">The music will play after De Milla taps the Music button, because browsers usually block autoplay with sound.</p>
+</div>
+<div class="upload card">
+<strong>💗 All Our Memories</strong>
+<p>The videos, voice recording, and music are stored together with this page, so GitHub Pages can load them from the<code>media/</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="wishes">
+<div class="wrap wishes reveal">
+<span class="badge">A Wish From My Heart</span>
+<h2>For the next chapter of your life... 🌙</h2>
+<div class="card">
+<p>May this new year of your life be gentler, happier, and filled with beautiful things. May every step give you a reason to smile — and if I may, I hope I can still be part of many of those stories.</p>
+<div class="wishCloud">
+<span>Happiness</span><span>Peace</span><span>Good Memories</span><span>Beautiful Dreams</span><span>Strength</span><span>Smiles</span><span>New Adventures</span>
+</div>
+<p>Keep being the De Milla I know. Keep dreaming, keep smiling, and never feel that you have to become someone else to be worthy of love. ❤️</p>
+</div>
+</div>
+</section>
+<section id="final">
+<div class="wrap final reveal">
+<div class="bigHeart">❤️</div>
+<span class="badge">The Part I Really Want You To Remember</span>
+<h2>Happy Birthday, my favorite person. ❤️</h2>
+<p>Thank you for being here and making so many days feel more meaningful. If this page ever feels simple one day, I hope the feeling behind it never feels small.</p>
+<p class="romanticQuote">“I love you. Today, tomorrow, and for all the beautiful memories still waiting for us.”</p>
+<button class="btn" onclick="birthdayBurst()">A virtual hug from Aa Ipal 🤍</button>
+<p style="margin-top:35px;color:#8e818d">Made with love, from Aa Ipal to De Milla ❤️</p>
+</div>
+</section>
+</main>
+<footer>Made with a whole lot of love for De Milla ❤️<br/><span style="opacity:.7">A few little memories and couple stickers are included with the website.</span></footer>
+<div class="modal" id="modal">
+<div class="modalBox card">
+<div style="font-size:70px">🎉</div>
+<h2>For you, De Milla. ❤️</h2>
+<p>This is only a small gift. But everything inside it was made with a very big heart.</p>
+<p class="romanticQuote" style="font-size:18px">“Thank you for being one of the most beautiful parts of my story.”</p>
+<button class="btn" onclick="closeModal()">Let me continue, my love →</button>
+</div>
+</div>
+<audio id="bgMusic" loop="" preload="auto" src="media/happy-birthday.mp3"></audio>
+<script>
+const $=id=>document.getElementById(id);
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+
+const stars=$('stars');
+for(let i=0;i<100;i++){
+ const s=document.createElement('i');s.className='star';
+ s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+ s.style.animationDelay=Math.random()*3+'s';stars.appendChild(s);
+}
+
+async function openSurprise(){
+ go('birthday');
+ const m=$('bgMusic');
+ if(m.src){try{await m.play();$('musicBtn').textContent='🔊 Music On'}catch(e){}}
+ birthdayBurst();
+}
+function toggleMusic(){
+ const m=$('bgMusic');
+ if(!m.src){return}
+ if(m.paused){m.play();$('musicBtn').textContent='🔊 Music On'}
+ else{m.pause();$('musicBtn').textContent='🔇 Music Off'}
+}
+function birthdayBurst(){
+ $('modal').classList.add('open');
+ for(let i=0;i<90;i++){
+  const c=document.createElement('i');c.className='confetti';
+  c.textContent=['✦','•','❤','✧'][Math.floor(Math.random()*4)];
+  c.style.left=Math.random()*100+'vw';c.style.top='-20px';
+  c.style.fontSize=(8+Math.random()*18)+'px';
+  c.style.animationDelay=(Math.random()*.7)+'s';
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),3500);
+ }
+}
+function closeModal(){$('modal').classList.remove('open')}
+
+function hearts(){
+ const h=document.createElement('span');h.className='heart';
+ h.textContent=['♥','♡','✦'][Math.floor(Math.random()*3)];
+ h.style.left=Math.random()*100+'vw';h.style.fontSize=(12+Math.random()*20)+'px';
+ h.style.animationDuration=(4+Math.random()*4)+'s';
+ $('hearts').appendChild(h);setTimeout(()=>h.remove(),8500);
+}
+setInterval(hearts,900);
+
+function enterRomance(){
+ $('romanticOverlay').classList.add('hide');
+ setTimeout(()=>go('home'),120);
+ typeLoveLine();
+ const m=$('bgMusic');
+ try{m.play().then(()=>{$('musicBtn').textContent='🔊 Music On'}).catch(()=>{})}catch(e){}
+}
+function typeLoveLine(){
+ const el=$('typeLine'); if(!el)return;
+ const text='“Dari semua hal yang bisa aku tulis, namamu tetap jadi kalimat favoritku.” ❤️';
+ let i=0; el.textContent='';
+ const timer=setInterval(()=>{el.textContent=text.slice(0,++i);if(i>=text.length)clearInterval(timer)},42);
+}
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+</script>
+</body>
+</html>
